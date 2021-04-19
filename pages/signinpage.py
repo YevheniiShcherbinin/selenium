@@ -27,7 +27,7 @@ class Login:
         self.driver.find_element(By.NAME, self.username_locator).send_keys(self.email)
         self.driver.find_element(By.NAME, self.password_locator).send_keys(self.password)
 
-    def login_to_app(self, time = 5):
+    def login_to_app(self, time = 10):
         self.driver.find_element(By.CSS_SELECTOR, self.button).click()
         return WebDriverWait(self.driver, time).until(
             EC.presence_of_element_located((By.CLASS_NAME, self.navigation_locator)),
